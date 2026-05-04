@@ -1,16 +1,21 @@
 {
-  "name": "db",
+  "name": "@repo/db",
   "version": "0.0.0",
   "type": "module",
   "private": true,
+  "scripts": {
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy"
+  },
   "exports": {
-    "./client": "./src/lib/prisma.ts"
+    ".": "./src/index.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/node": "^22.0.0",
     "@types/pg": "^8.20.0",
-    "@repo/typescript-config": "*",
+    "@repo/typescript-config": "workspace:*",
     "prisma": "^7.8.0"
   },
   "dependencies": {

@@ -1,7 +1,7 @@
 {
   "extends": "@repo/typescript-config/base.json",
   "compilerOptions": {
-    "noEmit": true
+    "noEmit": true,
   },
   "include": [
     "src",
@@ -10,6 +10,6 @@
   "exclude": [
     "node_modules",
     "dist",
-    "src/generated"
+    "generated"
   ]
 }
