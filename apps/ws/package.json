@@ -3,6 +3,12 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "dev": "bun --hot --no-clear-screen index.ts",
+    "start": "bun dist/index.js",
+    "build": "bun build index.ts --minify --outdir ./dist --target node",
+    "clean": "rm -rf dist && echo 'Cleaned dist'"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
