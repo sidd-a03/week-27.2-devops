@@ -23,6 +23,7 @@ app.get("/users", async (_, res) => {
 app.post("/user", async (req, res) => {
     try {
         const { username, email, password } = req.body;
+        console.log(username, email, password);
 
         if(!username || !email || !password) {
             return res.status(400).json({
@@ -50,9 +51,13 @@ app.post("/user", async (req, res) => {
                 password: hashedPassword,
             }
         })
+
+        return res.status(201).json({
+            message: "User created successfully",
+        })
     } catch (error) {
         res.status(500).json({
-            message: "Internal Server Error",
+            error: error
         })
     }
 })
